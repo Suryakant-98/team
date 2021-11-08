@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <form action="">
+    <input type = "button" name="" onclick="displaytime('Timbuktu', '0')" value="Timbuktu Time">
+    <p id="timepara">Time Check here</p><br>
+    <br>
+    <button>Switch Colour</button>
+</form>
+<style>
+    body
+    {
+    margin: 0;
+    padding: 0;
+    background: #222f3e;
+    }
+    button
+    {
+    position: absolute;
+    top: 50;
+    Left: 50;
+    transform: translate( -58%, -50);
+    padding: 10px;
+    background: #fff;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    }
+</style>
+
+<script>
+    function displaytime(city, offset) {
+           dateobj = new Date();
+            utc = dateobj.getTime() + (dateobj.getTimezoneOffset() * 60000);
+             nd = new Date(utc + (3600000*offset));
+            document.getElementById('timepara').innerHTML = `The local time in  ${city}  ${ nd.toLocaleString()}`;
+              }
+              
+              var color = [ "#223344" , "#ffee00"];
+              var i=0;
+              document.querySelector("button").addEventListener("click",
+              function () {
+              i = i < color.length ? ++i : 0;
+              document.querySelector("body").style.background = color[i]
+              })
+</script>
+
+<html>
+
+<script> 
+    function italian() {
+        document.getElementById('a').style.font-family = "Arial";
+    }
+
+    function increaseFontSizeBy1px() {
+        var font = document.getElementById('b').style.fontSize;            
+        font++;
+    }
+</script>
